@@ -5,3 +5,29 @@
 .margin-bottom-10px {
     margin-bottom: 10px;
 }
+
+.sem-margin-margin {
+    margin: 0;
+    padding: 0;
+}
+
+@media all and (max-width: 576px) {
+    .oculta-xs {
+        display: none;
+    }
+}
+
+.menu {
+    background-color: #4285F4;
+    color: white;
+}
+
+.botao-logout {
+    background-color: #4285F4;
+    color: white;
+    border-color: white;
+}
+
+.acao {
+    width: 10px;
+}

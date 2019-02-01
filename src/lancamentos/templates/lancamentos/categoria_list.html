@@ -4,19 +4,19 @@
 
 {% block body %}
 
-<div class="row">
-    <div class="col-sm-6 offset-sm-3">
+<div class="row sem-margin-margin">
+    <div class="col-md-6 offset-md-3 col-lg-10 offset-lg-1 col-12">
         <div class="row margin-bottom-10px">
             <a class="btn btn-primary" href="{% url 'categoria_form' %}">Adicionar</a>
         </div>
 
         <div class="row">
             <table class="table table-striped">
-                <thead class="thead-dark">
+                <thead class="menu">
                     <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Descrição</th>                        
-                    <th scope="col">Ação</th>
+                    <th class="acao" scope="col">Ação</th>
                     </tr>
                 </thead>
                 <tbody>
