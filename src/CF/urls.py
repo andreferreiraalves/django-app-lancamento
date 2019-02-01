@@ -15,14 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from lancamentos.views import CategoriaCreate, LancamentoCreate, CategoriaList, LancamentoList
+from lancamentos.views import (
+    CategoriaList,
+    CategoriaCreate,
+    CategoriaDelete,
+
+    LancamentoList, 
+    LancamentoCreate, 
+    LancamentoDelete)
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
+
+    path('', LancamentoList.as_view(), name='index'),
     
-    path('categoria/create', CategoriaCreate.as_view(), name='categoria_form'),
     path('categoria/', CategoriaList.as_view(), name='categoria_list'),
+    path('categoria/create/', CategoriaCreate.as_view(), name='categoria_form'),
+    path('categoria/delete/<int:pk>/', CategoriaDelete.as_view(), name='categoria_delete'),
 
     path('lancamento/', LancamentoList.as_view(), name='lancamento_list'),
-    path('lancamento/create', LancamentoCreate.as_view(), name='lancamento_form'),
+    path('lancamento/create/', LancamentoCreate.as_view(), name='lancamento_form'),
+    path('lancamento/delete/<int:pk>/', LancamentoDelete.as_view(), name='lancamento_delete'),
 ]

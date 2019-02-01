@@ -3,14 +3,35 @@
 {% load crispy_forms_tags %}
 
 {% block body %}
-<div class="row">
-    <div class="col-sm-4 offset-sm-3">
-    
-        {% for categoria in object_list %}
-        <p>{{ categoria.descricao }}</p>
-        <br>
-        {% endfor %}
 
+<div class="row">
+    <div class="col-sm-6 offset-sm-3">
+        <div class="row margin-bottom-10px">
+            <a class="btn btn-primary" href="{% url 'categoria_form' %}">Adicionar</a>
+        </div>
+
+        <div class="row">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Descrição</th>                        
+                    <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for categoria in object_list %}
+                    <tr>
+                        <th scope="row">{{ categoria.pk }}</th>
+                        <td>{{ categoria.descricao }}</td>                            
+                        <td class="d-flex justify-content-center">                            
+                            <a href="{% url 'categoria_delete' categoria.pk %}"><i class="material-icons red">delete</i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}        
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 {% endblock %}
