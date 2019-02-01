@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-4 offset-sm-3">
+    
+        {% for categoria in object_list %}
+        <p>{{ categoria.descricao }}</p>
+        <br>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}

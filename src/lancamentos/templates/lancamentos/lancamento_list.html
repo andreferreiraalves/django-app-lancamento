@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-4 offset-sm-3">
+    
+        {% for lancamento in object_list %}
+        <p>{{ lancamento.descricao }}</p>
+        <p>{{ lancamento.valor }}</p>
+        <br>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
